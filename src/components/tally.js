@@ -1,5 +1,6 @@
 import React from "react";
-import { MenuItem, Select, Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core";
+import { IconButton, MenuItem, Select, Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core";
+import { Star, StarBorder } from "@material-ui/icons";
 import { useDistricts } from "../hooks/use-districts";
 import { districts as rawDistricts } from "../data";
 
@@ -13,6 +14,7 @@ const Tally = () => {
           <TableCell>District</TableCell>
           <TableCell>Incumbent</TableCell>
           <TableCell>Winner</TableCell>
+          <TableCell>Featured</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -33,6 +35,11 @@ const Tally = () => {
                 <MenuItem value="GRN">GRN</MenuItem>
                 <MenuItem value="OTH">OTH</MenuItem>
               </Select>
+            </TableCell>
+            <TableCell>
+              <IconButton onClick={() => onToggleFeatured(dist.id)}>
+                {dist.featured ? <Star /> : <StarBorder />}
+              </IconButton>
             </TableCell>
           </TableRow>
         ))}
