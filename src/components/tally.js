@@ -1,6 +1,6 @@
 import React from "react";
-import { IconButton, MenuItem, Select, Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core";
-import { Star, StarBorder } from "@material-ui/icons";
+import { IconButton, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
+import { Select, Star, StarBorder, TableRow, Wrapper } from "./tally.styles";
 import { useDistricts } from "../hooks/use-districts";
 import { districts as rawDistricts } from "../data";
 
@@ -8,43 +8,46 @@ const Tally = () => {
   const { districts, onPartyChange, onToggleFeatured } = useDistricts(rawDistricts);
 
   return (
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>District</TableCell>
-          <TableCell>Incumbent</TableCell>
-          <TableCell>Winner</TableCell>
-          <TableCell>Featured</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {districts.map(dist => (
-          <TableRow key={dist.id}>
-            <TableCell component="th" scope="row">
-              {dist.name}
-            </TableCell>
-            <TableCell>{dist.incumbent}</TableCell>
-            <TableCell>
-              <Select
-                onChange={({ target }) => onPartyChange(dist.id, target.value)}
-                value={dist.party}
-              >
-                <MenuItem value="" />
-                <MenuItem value="LNP">LNP</MenuItem>
-                <MenuItem value="ALP">ALP</MenuItem>
-                <MenuItem value="GRN">GRN</MenuItem>
-                <MenuItem value="OTH">OTH</MenuItem>
-              </Select>
-            </TableCell>
-            <TableCell>
-              <IconButton onClick={() => onToggleFeatured(dist.id)}>
-                {dist.featured ? <Star /> : <StarBorder />}
-              </IconButton>
-            </TableCell>
+    <Wrapper>
+      <Table padding="none">
+        <TableHead>
+          <TableRow>
+            <TableCell padding="dense">District</TableCell>
+            <TableCell>Incumbent</TableCell>
+            <TableCell>Winner</TableCell>
+            <TableCell>Featured</TableCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHead>
+        <TableBody>
+          {districts.map(dist => (
+            <TableRow key={dist.id} party={dist.party}>
+              <TableCell component="th" padding="dense" scope="row">
+                {dist.name}
+              </TableCell>
+              <TableCell>{dist.incumbent}</TableCell>
+              <TableCell>
+                <Select
+                  native
+                  onChange={({ target }) => onPartyChange(dist.id, target.value)}
+                  value={dist.party}
+                >
+                  <option value="">UND</option>
+                  <option value="LNP">LNP</option>
+                  <option value="ALP">ALP</option>
+                  <option value="GRN">GRN</option>
+                  <option value="OTH">OTH</option>
+                </Select>
+              </TableCell>
+              <TableCell>
+                <IconButton onClick={() => onToggleFeatured(dist.id)}>
+                  {dist.featured ? <Star /> : <StarBorder />}
+                </IconButton>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Wrapper>
   );
 };
 
