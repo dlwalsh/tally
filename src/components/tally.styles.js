@@ -1,4 +1,4 @@
-import { styled } from "@material-ui/styles";
+import { makeStyles, styled } from "@material-ui/styles";
 import {
   Select as MaterialSelect,
   TableRow as MaterialTableRow,
@@ -7,7 +7,7 @@ import {
   Star as MaterialStar,
   StarBorder as MaterialStarBorder,
 } from "@material-ui/icons";
-import { amber, blue, brown, green, red } from "@material-ui/core/colors";
+import { amber, blue, brown, green, purple, red } from "@material-ui/core/colors";
 
 const colorMap = {
   ALP: red[50],
@@ -22,7 +22,7 @@ export const Wrapper = styled("div")({
 
 export const Select = styled(MaterialSelect)({});
 
-export const Star = styled(MaterialStar)({
+export const StarFilled = styled(MaterialStar)({
   color: amber[500],
 });
 
@@ -35,3 +35,25 @@ export const TableRow = styled(MaterialTableRow)(
     backgroundColor: party ? colorMap[party] : "inherit",
   }),
 );
+
+export const GenericIcon = styled("span")({
+  fontSize: "1.7em",
+  lineHeight: 1.1,
+});
+
+export const useAppBarClasses = makeStyles({
+  colorPrimary: {
+    backgroundColor: `${purple[900]} !important`,
+  },
+});
+
+export const useTabsClasses = makeStyles({
+  flexContainer: {
+    justifyContent: "space-around",
+  },
+  indicator: {
+    backgroundColor: `${amber[500]} !important`,
+  },
+});
+
+export const useTabClasses = makeStyles({});

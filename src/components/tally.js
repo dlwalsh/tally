@@ -1,14 +1,42 @@
-import React from "react";
-import { IconButton, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
-import { Select, Star, StarBorder, TableRow, Wrapper } from "./tally.styles";
+import React, { useState } from "react";
+import { AppBar, IconButton, Tab, Tabs, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
+import { SwapHoriz, Star, ViewList } from "@material-ui/icons";
+import {
+  GenericIcon,
+  Select,
+  StarFilled,
+  StarBorder,
+  TableRow,
+  Wrapper,
+  useAppBarClasses,
+  useTabClasses,
+  useTabsClasses,
+} from "./tally.styles";
 import { useDistricts } from "../hooks/use-districts";
 import { districts as rawDistricts } from "../data";
 
 const Tally = () => {
   const { districts, onPartyChange, onToggleFeatured } = useDistricts(rawDistricts);
+  const [filterValue, setFilterValue] = useState(0);
+  const appBarClasses = useAppBarClasses();
+  const tabClasses = useTabClasses();
+  const tabsClasses = useTabsClasses();
 
   return (
     <Wrapper>
+      <AppBar position="static" classes={appBarClasses} color="primary">
+        <Tabs
+          classes={tabsClasses}
+          value={filterValue}
+          onChange={(event, value) => setFilterValue(value)}
+          scrollButtons="off"
+        >
+          <Tab classes={tabClasses} label="All" icon={<ViewList />} />
+          <Tab classes={tabClasses} label="Changing" icon={<SwapHoriz />} />
+          <Tab classes={tabClasses} label="Undecided" icon={<GenericIcon>?</GenericIcon>} />
+          <Tab classes={tabClasses} label="Featured" icon={<Star />} />
+        </Tabs>
+      </AppBar>
       <Table padding="none">
         <TableHead>
           <TableRow>
@@ -40,7 +68,7 @@ const Tally = () => {
               </TableCell>
               <TableCell>
                 <IconButton onClick={() => onToggleFeatured(dist.id)}>
-                  {dist.featured ? <Star /> : <StarBorder />}
+                  {dist.featured ? <StarFilled /> : <StarBorder />}
                 </IconButton>
               </TableCell>
             </TableRow>
