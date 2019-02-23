@@ -7,7 +7,15 @@ export const districts = [{
   incumbent: "GRN",
   featured: true,
 }, {
+  name: "Bankstown",
+  incumbent: "ALP",
+  featured: true,
+}, {
   name: "Baulkham Hills",
+  incumbent: "LNP",
+  featured: true,
+}, {
+  name: "Bega",
   incumbent: "LNP",
   featured: true,
 }, {
@@ -51,12 +59,24 @@ export const districts = [{
   incumbent: "LNP",
   featured: true,
 }, {
+  name: "Drummoyne",
+  incumbent: "LNP",
+  featured: true,
+}, {
   name: "East Hills",
+  incumbent: "LNP",
+  featured: true,
+}, {
+  name: "Epping",
   incumbent: "LNP",
   featured: true,
 }, {
   name: "Fairfield",
   incumbent: "ALP",
+  featured: true,
+}, {
+  name: "Goulburn",
+  incumbent: "LNP",
   featured: true,
 }, {
   name: "Granville",
@@ -71,6 +91,10 @@ export const districts = [{
   incumbent: "LNP",
   featured: true,
 }, {
+  name: "Heffron",
+  incumbent: "ALP",
+  featured: true,
+}, {
   name: "Holsworthy",
   incumbent: "LNP",
   featured: true,
@@ -79,12 +103,28 @@ export const districts = [{
   incumbent: "LNP",
   featured: true,
 }, {
+  name: "Keira",
+  incumbent: "ALP",
+  featured: true,
+}, {
+  name: "Kiama",
+  incumbent: "LNP",
+  featured: true,
+}, {
+  name: "Kogarah",
+  incumbent: "ALP",
+  featured: true,
+}, {
   name: "Ku-ring-gai",
   incumbent: "LNP",
   featured: true,
 }, {
   name: "Lane Cove",
   incumbent: "LNP",
+  featured: true,
+}, {
+  name: "Lakemba",
+  incumbent: "ALP",
   featured: true,
 }, {
   name: "Liverpool",
@@ -105,6 +145,14 @@ export const districts = [{
 }, {
   name: "Maroubra",
   incumbent: "ALP",
+  featured: true,
+}, {
+  name: "Miranda",
+  incumbent: "LNP",
+  featured: true,
+}, {
+  name: "Monaro",
+  incumbent: "LNP",
   featured: true,
 }, {
   name: "Mount Druitt",
@@ -147,11 +195,23 @@ export const districts = [{
   incumbent: "LNP",
   featured: true,
 }, {
+  name: "Rockdale",
+  incumbent: "ALP",
+  featured: true,
+}, {
   name: "Ryde",
   incumbent: "LNP",
   featured: true,
 }, {
   name: "Seven Hills",
+  incumbent: "LNP",
+  featured: true,
+}, {
+  name: "Shellharbour",
+  incumbent: "ALP",
+  featured: true,
+}, {
+  name: "South Coast",
   incumbent: "LNP",
   featured: true,
 }, {
@@ -177,5 +237,13 @@ export const districts = [{
 }, {
   name: "Willoughby",
   incumbent: "LNP",
+  featured: true,
+}, {
+  name: "Wollondilly",
+  incumbent: "LNP",
+  featured: true,
+}, {
+  name: "Wollongong",
+  incumbent: "ALP",
   featured: true,
 }];

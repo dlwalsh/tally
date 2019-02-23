@@ -8,7 +8,7 @@ import {
   Star as MaterialStar,
   StarBorder as MaterialStarBorder,
 } from "@material-ui/icons";
-import { amber, blue, brown, green, grey, purple, red } from "@material-ui/core/colors";
+import { amber, blue, brown, green, grey, red } from "@material-ui/core/colors";
 
 export const Wrapper = styled("div")({
   color: "black",
@@ -51,8 +51,8 @@ export const Chip = styled(MaterialChip)(
 );
 
 export const GenericIcon = styled("span")({
-  fontSize: "1.7em",
-  lineHeight: 1.1,
+  fontSize: "1.6em",
+  lineHeight: 1.2,
 });
 
 export const useTabsClasses = makeStyles({
@@ -68,7 +68,7 @@ export const useTabClasses = makeStyles({});
 
 export const useTopBarClasses = makeStyles({
   colorPrimary: {
-    backgroundColor: `${purple[900]} !important`,
+    backgroundColor: "black !important",
   },
 });
 

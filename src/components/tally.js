@@ -43,8 +43,6 @@ const Tally = () => {
   const tabClasses = useTabClasses();
   const tabsClasses = useTabsClasses();
 
-  console.log(length(filter(propEq("party", "LNP"), districts)));
-
   return (
     <Wrapper>
       <AppBar position="fixed" classes={topBarClasses} color="primary">
