@@ -1,17 +1,19 @@
 import React, { useMemo, useState } from "react";
-import { filter, prop, propEq } from "ramda";
+import { filter, length, pipe, prop, propEq } from "ramda";
 import { AppBar, IconButton, Tab, Tabs, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
 import { SwapHoriz, Star, ViewList } from "@material-ui/icons";
 import {
+  Chip,
   GenericIcon,
   Select,
   StarFilled,
   StarBorder,
   TableRow,
   Wrapper,
-  useAppBarClasses,
   useTabClasses,
   useTabsClasses,
+  useTopBarClasses,
+  useBottomBarClasses,
 } from "./tally.styles";
 import { useDistricts } from "../hooks/use-districts";
 import { districts as rawDistricts } from "../data";
@@ -19,6 +21,7 @@ import { districts as rawDistricts } from "../data";
 const filterChanging = filter(dist => dist.party && dist.party !== dist.incumbent);
 const filterUndecided = filter(propEq("party", ""));
 const filterFeatured = filter(prop("featured"));
+const lengthWhere = pipe(filter, length);
 
 const Tally = () => {
   const { districts, onPartyChange, onToggleFeatured } = useDistricts(rawDistricts);
@@ -35,13 +38,16 @@ const Tally = () => {
     }
     return districts;
   }, [districts, filterValue]);
-  const appBarClasses = useAppBarClasses();
+  const topBarClasses = useTopBarClasses();
+  const bottomBarClasses = useBottomBarClasses();
   const tabClasses = useTabClasses();
   const tabsClasses = useTabsClasses();
 
+  console.log(length(filter(propEq("party", "LNP"), districts)));
+
   return (
     <Wrapper>
-      <AppBar position="fixed" classes={appBarClasses} color="primary">
+      <AppBar position="fixed" classes={topBarClasses} color="primary">
         <Tabs
           classes={tabsClasses}
           value={filterValue}
@@ -92,6 +98,13 @@ const Tally = () => {
           ))}
         </TableBody>
       </Table>
+      <AppBar position="fixed" classes={bottomBarClasses} color="secondary">
+        <Chip party="LNP" label={`LNP ${lengthWhere(propEq("party", "LNP"), districts)}`} />
+        <Chip party="ALP" label={`ALP ${lengthWhere(propEq("party", "ALP"), districts)}`} />
+        <Chip party="GRN" label={`GRN ${lengthWhere(propEq("party", "GRN"), districts)}`} />
+        <Chip party="OTH" label={`OTH ${lengthWhere(propEq("party", "OTH"), districts)}`} />
+        <Chip party="UND" label={`UND ${lengthWhere(propEq("party", ""), districts)}`} />
+      </AppBar>
     </Wrapper>
   );
 };

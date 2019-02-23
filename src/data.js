@@ -1,4 +1,8 @@
 export const districts = [{
+  name: "Auburn",
+  incumbent: "ALP",
+  featured: true,
+}, {
   name: "Balmain",
   incumbent: "GRN",
   featured: true,
@@ -152,6 +156,10 @@ export const districts = [{
   featured: true,
 }, {
   name: "Strathfield",
+  incumbent: "ALP",
+  featured: true,
+}, {
+  name: "Summer Hill",
   incumbent: "ALP",
   featured: true,
 }, {
