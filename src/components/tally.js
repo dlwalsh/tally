@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import { filter, prop, propEq } from "ramda";
 import { AppBar, IconButton, Tab, Tabs, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
 import { SwapHoriz, Star, ViewList } from "@material-ui/icons";
 import {
@@ -15,16 +16,32 @@ import {
 import { useDistricts } from "../hooks/use-districts";
 import { districts as rawDistricts } from "../data";
 
+const filterChanging = filter(dist => dist.party && dist.party !== dist.incumbent);
+const filterUndecided = filter(propEq("party", ""));
+const filterFeatured = filter(prop("featured"));
+
 const Tally = () => {
   const { districts, onPartyChange, onToggleFeatured } = useDistricts(rawDistricts);
   const [filterValue, setFilterValue] = useState(0);
+  const filteredDistricts = useMemo(() => {
+    if (filterValue === 1) {
+      return filterChanging(districts);
+    }
+    if (filterValue === 2) {
+      return filterUndecided(districts);
+    }
+    if (filterValue === 3) {
+      return filterFeatured(districts);
+    }
+    return districts;
+  }, [districts, filterValue]);
   const appBarClasses = useAppBarClasses();
   const tabClasses = useTabClasses();
   const tabsClasses = useTabsClasses();
 
   return (
     <Wrapper>
-      <AppBar position="static" classes={appBarClasses} color="primary">
+      <AppBar position="fixed" classes={appBarClasses} color="primary">
         <Tabs
           classes={tabsClasses}
           value={filterValue}
@@ -47,7 +64,7 @@ const Tally = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {districts.map(dist => (
+          {filteredDistricts.map(dist => (
             <TableRow key={dist.id} party={dist.party}>
               <TableCell component="th" padding="dense" scope="row">
                 {dist.name}

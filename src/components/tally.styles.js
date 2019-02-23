@@ -18,6 +18,7 @@ const colorMap = {
 
 export const Wrapper = styled("div")({
   color: "black",
+  paddingTop: 72,
 });
 
 export const Select = styled(MaterialSelect)({});
