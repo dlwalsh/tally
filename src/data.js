@@ -1,249 +1,373 @@
 export const districts = [{
+  name: "Albury",
+  incumbent: "LNP",
+  featured: false,
+}, {
   name: "Auburn",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Ballina",
+  incumbent: "GRN",
+  featured: false,
 }, {
   name: "Balmain",
   incumbent: "GRN",
-  featured: true,
+  featured: false,
 }, {
   name: "Bankstown",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Barwon",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "Bathurst",
+  incumbent: "LNP",
+  featured: false,
 }, {
   name: "Baulkham Hills",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Bega",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Blacktown",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Blue Mountains",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Cabramatta",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Camden",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Campbelltown",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Canterbury",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Castle Hill",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Cessnock",
+  incumbent: "ALP",
+  featured: false,
+}, {
+  name: "Charlestown",
+  incumbent: "ALP",
+  featured: false,
+}, {
+  name: "Clarence",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "Coffs Harbour",
+  incumbent: "LNP",
+  featured: false,
 }, {
   name: "Coogee",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Cootamundra",
+  incumbent: "LNP",
+  featured: false,
 }, {
   name: "Cronulla",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Davidson",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Drummoyne",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Dubbo",
+  incumbent: "LNP",
+  featured: false,
 }, {
   name: "East Hills",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Epping",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Fairfield",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Gosford",
+  incumbent: "ALP",
+  featured: false,
 }, {
   name: "Goulburn",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Granville",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Hawkesbury",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Heathcote",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Heffron",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Holsworthy",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Hornsby",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Keira",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Kiama",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Kogarah",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Ku-ring-gai",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
-  name: "Lane Cove",
-  incumbent: "LNP",
-  featured: true,
+  name: "Lake Macquarie",
+  incumbent: "OTH",
+  featured: false,
 }, {
   name: "Lakemba",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Lane Cove",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "Lismore",
+  incumbent: "LNP",
+  featured: false,
 }, {
   name: "Liverpool",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Londonderry",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Macquarie Fields",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Maitland",
+  incumbent: "ALP",
+  featured: false,
 }, {
   name: "Manly",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Maroubra",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Miranda",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Monaro",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Mount Druitt",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Mulgoa",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Murray",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "Myall Lakes",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "Newcastle",
+  incumbent: "ALP",
+  featured: false,
 }, {
   name: "Newtown",
   incumbent: "GRN",
-  featured: true,
+  featured: false,
 }, {
-  name: "North Sydney",
+  name: "North Shore",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Northern Tablelands",
+  incumbent: "LNP",
+  featured: false,
 }, {
   name: "Oatley",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Orange",
+  incumbent: "OTH",
+  featured: false,
+}, {
+  name: "Oxley",
+  incumbent: "LNP",
+  featured: false,
 }, {
   name: "Parramatta",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Penrith",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Pittwater",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Port Macquarie",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "Port Stephens",
+  incumbent: "ALP",
+  featured: false,
 }, {
   name: "Prospect",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Riverstone",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Rockdale",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Ryde",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Seven Hills",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Shellharbour",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "South Coast",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Strathfield",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
 }, {
   name: "Summer Hill",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Swansea",
+  incumbent: "ALP",
+  featured: false,
 }, {
   name: "Sydney",
   incumbent: "OTH",
-  featured: true,
+  featured: false,
+}, {
+  name: "Tamworth",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "Terrigal",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "The Entrance",
+  incumbent: "ALP",
+  featured: false,
+}, {
+  name: "Tweed",
+  incumbent: "LNP",
+  featured: false,
+}, {
+  name: "Upper Hunter",
+  incumbent: "LNP",
+  featured: false,
 }, {
   name: "Vaucluse",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Wagga Wagga",
+  incumbent: "OTH",
+  featured: false,
 }, {
   name: "Wakehurst",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Wallsend",
+  incumbent: "ALP",
+  featured: false,
 }, {
   name: "Willoughby",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Wollondilly",
   incumbent: "LNP",
-  featured: true,
+  featured: false,
 }, {
   name: "Wollongong",
   incumbent: "ALP",
-  featured: true,
+  featured: false,
+}, {
+  name: "Wyong",
+  incumbent: "ALP",
+  featured: false,
 }];
