@@ -1,17 +1,14 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { filter, length, pipe, prop, propEq } from "ramda";
-import { IconButton, Select, Tab, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
-import { SwapHoriz, Star, ViewList } from "@material-ui/icons";
+import { Select, Tab, Table, TableBody, TableCell, TableHead, withStyles } from "@material-ui/core";
+import { SwapHoriz, Star, StarBorder, ViewList } from "@material-ui/icons";
 import {
   BottomBar,
   Chip,
-  GenericIcon,
-  StarFilled,
-  StarBorder,
+  IconButton,
   TableRow,
   Tabs,
   TopBar,
-  Wrapper,
 } from "./tally.styles";
 import { useDistricts } from "../hooks/use-districts";
 import {
@@ -26,7 +23,7 @@ const lengthWhere = pipe(filter, length);
 
 const storage = localStorage.getItem(storageKey);
 
-const Tally = () => {
+const Tally = ({ classes }) => {
   const { districts, onPartyChange, onToggleFeatured } = useDistricts(
     storage ? JSON.parse(storage) : rawDistricts,
   );
@@ -49,7 +46,7 @@ const Tally = () => {
   }, [districts]);
 
   return (
-    <Wrapper>
+    <div className={classes.wrapper}>
       <TopBar position="fixed" color="primary">
         <Tabs
           value={filterValue}
@@ -58,7 +55,7 @@ const Tally = () => {
         >
           <Tab label="All" icon={<ViewList />} />
           <Tab label="Changing" icon={<SwapHoriz />} />
-          <Tab label="Undecided" icon={<GenericIcon>?</GenericIcon>} />
+          <Tab label="Undecided" icon={<span className={classes.genericIcon}>?</span>} />
           <Tab label="Featured" icon={<Star />} />
         </Tabs>
       </TopBar>
@@ -92,8 +89,8 @@ const Tally = () => {
                 </Select>
               </TableCell>
               <TableCell>
-                <IconButton onClick={() => onToggleFeatured(dist.id)}>
-                  {dist.featured ? <StarFilled /> : <StarBorder />}
+                <IconButton color={dist.features ? "primary" : "secondary"} onClick={() => onToggleFeatured(dist.id)}>
+                  {dist.featured ? <Star /> : <StarBorder />}
                 </IconButton>
               </TableCell>
             </TableRow>
@@ -122,8 +119,18 @@ const Tally = () => {
           label={`UND ${lengthWhere(propEq("party", ""), districts)}`}
         />
       </BottomBar>
-    </Wrapper>
+    </div>
   );
 };
 
-export default Tally;
+export default withStyles({
+  wrapper: {
+    color: "black",
+    paddingTop: 72,
+    paddingBottom: 60,
+  },
+  genericIcon: {
+    fontSize: "1.6em",
+    lineHeight: 1.2,
+  },
+})(Tally);

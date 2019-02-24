@@ -1,30 +1,21 @@
-import { styled } from "@material-ui/styles";
 import {
   AppBar as MaterialAppBar,
   Chip as MaterialChip,
+  IconButton as MaterialIconButton,
   Tabs as MaterialTabs,
   TableRow as MaterialTableRow,
   withStyles,
 } from "@material-ui/core";
-import {
-  Star as MaterialStar,
-  StarBorder as MaterialStarBorder,
-} from "@material-ui/icons";
 import { amber, blue, brown, green, grey, red } from "@material-ui/core/colors";
 
-export const Wrapper = styled("div")({
-  color: "black",
-  paddingTop: 72,
-  paddingBottom: 60,
-});
-
-export const StarFilled = styled(MaterialStar)({
-  color: amber[500],
-});
-
-export const StarBorder = styled(MaterialStarBorder)({
-  color: amber.A700,
-});
+export const IconButton = withStyles({
+  colorPrimary: {
+    color: amber[500],
+  },
+  colorSecondary: {
+    color: amber.A700,
+  },
+})(MaterialIconButton);
 
 export const TableRow = withStyles({
   root: {
@@ -63,11 +54,6 @@ export const Chip = withStyles({
     color: "white !important",
   },
 })(MaterialChip);
-
-export const GenericIcon = styled("span")({
-  fontSize: "1.6em",
-  lineHeight: 1.2,
-});
 
 export const Tabs = withStyles({
   flexContainer: {
