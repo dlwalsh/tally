@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tally/precache-manifest.dd19963df0ea9d52f84d373b1c7f04de.js"
+  "//dlwalsh.github.io/tally/precache-manifest.2226fd48b56ba5687d3bf573fe41edd2.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/tally/index.html", {
+workbox.routing.registerNavigationRoute("//dlwalsh.github.io/tally/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

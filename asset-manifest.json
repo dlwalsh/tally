@@ -1,13 +1,13 @@
 {
-  "main.css": "/tally/static/css/main.cf322524.chunk.css",
-  "main.js": "/tally/static/js/main.9c5abe4e.chunk.js",
-  "main.js.map": "/tally/static/js/main.9c5abe4e.chunk.js.map",
-  "runtime~main.js": "/tally/static/js/runtime~main.f8c90185.js",
-  "runtime~main.js.map": "/tally/static/js/runtime~main.f8c90185.js.map",
-  "static/js/2.d4f5996a.chunk.js": "/tally/static/js/2.d4f5996a.chunk.js",
-  "static/js/2.d4f5996a.chunk.js.map": "/tally/static/js/2.d4f5996a.chunk.js.map",
-  "index.html": "/tally/index.html",
-  "precache-manifest.dd19963df0ea9d52f84d373b1c7f04de.js": "/tally/precache-manifest.dd19963df0ea9d52f84d373b1c7f04de.js",
-  "service-worker.js": "/tally/service-worker.js",
-  "static/css/main.cf322524.chunk.css.map": "/tally/static/css/main.cf322524.chunk.css.map"
+  "main.css": "//dlwalsh.github.io/tally/static/css/main.cf322524.chunk.css",
+  "main.js": "//dlwalsh.github.io/tally/static/js/main.a2dcb0a3.chunk.js",
+  "main.js.map": "//dlwalsh.github.io/tally/static/js/main.a2dcb0a3.chunk.js.map",
+  "runtime~main.js": "//dlwalsh.github.io/tally/static/js/runtime~main.ed661381.js",
+  "runtime~main.js.map": "//dlwalsh.github.io/tally/static/js/runtime~main.ed661381.js.map",
+  "static/js/2.d4f5996a.chunk.js": "//dlwalsh.github.io/tally/static/js/2.d4f5996a.chunk.js",
+  "static/js/2.d4f5996a.chunk.js.map": "//dlwalsh.github.io/tally/static/js/2.d4f5996a.chunk.js.map",
+  "index.html": "//dlwalsh.github.io/tally/index.html",
+  "precache-manifest.2226fd48b56ba5687d3bf573fe41edd2.js": "//dlwalsh.github.io/tally/precache-manifest.2226fd48b56ba5687d3bf573fe41edd2.js",
+  "service-worker.js": "//dlwalsh.github.io/tally/service-worker.js",
+  "static/css/main.cf322524.chunk.css.map": "//dlwalsh.github.io/tally/static/css/main.cf322524.chunk.css.map"
 }
