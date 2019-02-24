@@ -31,7 +31,7 @@ export const TableRow = withStyles({
     "&.party-ALP": {
       backgroundColor: red[100],
     },
-    "&.party-LIB": {
+    "&.party-LNP": {
       backgroundColor: blue[100],
     },
     "&.party-GRN": {
@@ -48,7 +48,7 @@ export const Chip = withStyles({
     "&.party-ALP": {
       backgroundColor: red[500],
     },
-    "&.party-LIB": {
+    "&.party-LNP": {
       backgroundColor: blue[500],
     },
     "&.party-GRN": {

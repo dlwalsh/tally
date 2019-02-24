@@ -102,7 +102,7 @@ const Tally = () => {
       </Table>
       <BottomBar position="fixed" color="secondary">
         <Chip
-          className="party-LIB"
+          className="party-LNP"
           label={`LNP ${lengthWhere(propEq("party", "LNP"), districts)}`}
         />
         <Chip
