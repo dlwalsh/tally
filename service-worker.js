@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "//dlwalsh.github.io/tally/precache-manifest.6b91fbb100547cc7bf351a12bcbad165.js"
+  "//dlwalsh.github.io/tally/precache-manifest.34b0198cbae75c95a93c0b98b901017f.js"
 );
 
 workbox.clientsClaim();

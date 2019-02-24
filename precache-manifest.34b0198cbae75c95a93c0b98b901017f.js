@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "a309b9886a89ac39e564",
+    "revision": "b17b7f62471298f4ee41",
     "url": "//dlwalsh.github.io/tally/static/css/main.cf322524.chunk.css"
   },
   {
-    "revision": "a309b9886a89ac39e564",
-    "url": "//dlwalsh.github.io/tally/static/js/main.a309b988.chunk.js"
+    "revision": "b17b7f62471298f4ee41",
+    "url": "//dlwalsh.github.io/tally/static/js/main.b17b7f62.chunk.js"
   },
   {
     "revision": "ed661381d228c9216bdf",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "//dlwalsh.github.io/tally/static/js/2.8a7cc352.chunk.js"
   },
   {
-    "revision": "c54e719828337c1abbff05af6883f316",
+    "revision": "2a414cac8fea51cab641f16c824c95e4",
     "url": "//dlwalsh.github.io/tally/index.html"
   }
 ];
