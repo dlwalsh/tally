@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { filter, length, pipe, prop, propEq } from "ramda";
 import { AppBar, IconButton, Tab, Tabs, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
 import { SwapHoriz, Star, ViewList } from "@material-ui/icons";
@@ -16,15 +16,22 @@ import {
   useBottomBarClasses,
 } from "./tally.styles";
 import { useDistricts } from "../hooks/use-districts";
-import { districts as rawDistricts } from "../data";
+import {
+  districts as rawDistricts,
+  storageKey,
+} from "../data";
 
 const filterChanging = filter(dist => dist.party && dist.party !== dist.incumbent);
 const filterUndecided = filter(propEq("party", ""));
 const filterFeatured = filter(prop("featured"));
 const lengthWhere = pipe(filter, length);
 
+const storage = localStorage.getItem(storageKey);
+
 const Tally = () => {
-  const { districts, onPartyChange, onToggleFeatured } = useDistricts(rawDistricts);
+  const { districts, onPartyChange, onToggleFeatured } = useDistricts(
+    storage ? JSON.parse(storage) : rawDistricts,
+  );
   const [filterValue, setFilterValue] = useState(0);
   const filteredDistricts = useMemo(() => {
     if (filterValue === 1) {
@@ -42,6 +49,10 @@ const Tally = () => {
   const bottomBarClasses = useBottomBarClasses();
   const tabClasses = useTabClasses();
   const tabsClasses = useTabsClasses();
+
+  useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(districts));
+  }, [districts]);
 
   return (
     <Wrapper>
