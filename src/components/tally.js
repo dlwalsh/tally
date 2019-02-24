@@ -73,7 +73,7 @@ const Tally = () => {
         </TableHead>
         <TableBody>
           {filteredDistricts.map(dist => (
-            <TableRow key={dist.id} party={dist.party}>
+            <TableRow key={dist.id} className={dist.party ? `party-${dist.party}` : undefined}>
               <TableCell component="th" padding="dense" scope="row">
                 {dist.name}
               </TableCell>
@@ -101,11 +101,26 @@ const Tally = () => {
         </TableBody>
       </Table>
       <BottomBar position="fixed" color="secondary">
-        <Chip party="LNP" label={`LNP ${lengthWhere(propEq("party", "LNP"), districts)}`} />
-        <Chip party="ALP" label={`ALP ${lengthWhere(propEq("party", "ALP"), districts)}`} />
-        <Chip party="GRN" label={`GRN ${lengthWhere(propEq("party", "GRN"), districts)}`} />
-        <Chip party="OTH" label={`OTH ${lengthWhere(propEq("party", "OTH"), districts)}`} />
-        <Chip party="UND" label={`UND ${lengthWhere(propEq("party", ""), districts)}`} />
+        <Chip
+          className="party-LIB"
+          label={`LNP ${lengthWhere(propEq("party", "LNP"), districts)}`}
+        />
+        <Chip
+          className="party-ALP"
+          label={`ALP ${lengthWhere(propEq("party", "ALP"), districts)}`}
+        />
+        <Chip
+          className="party-GRN"
+          label={`GRN ${lengthWhere(propEq("party", "GRN"), districts)}`}
+        />
+        <Chip
+          className="party-OTH"
+          label={`OTH ${lengthWhere(propEq("party", "OTH"), districts)}`}
+        />
+        <Chip
+          className="party-UND"
+          label={`UND ${lengthWhere(propEq("party", ""), districts)}`}
+        />
       </BottomBar>
     </Wrapper>
   );

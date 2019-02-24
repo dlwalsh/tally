@@ -26,29 +26,43 @@ export const StarBorder = styled(MaterialStarBorder)({
   color: amber.A700,
 });
 
-export const TableRow = styled(MaterialTableRow)(
-  ({ party }) => ({
-    backgroundColor: {
-      ALP: red[100],
-      LNP: blue[100],
-      GRN: green[100],
-      OTH: brown[100],
-    }[party] || "transparent",
-  }),
-);
+export const TableRow = withStyles({
+  root: {
+    "&.party-ALP": {
+      backgroundColor: red[100],
+    },
+    "&.party-LIB": {
+      backgroundColor: blue[100],
+    },
+    "&.party-GRN": {
+      backgroundColor: green[100],
+    },
+    "&.party-OTH": {
+      backgroundColor: brown[100],
+    },
+  },
+})(MaterialTableRow);
 
-export const Chip = styled(MaterialChip)(
-  ({ party }) => ({
-    backgroundColor: {
-      LNP: `${blue[500]} !important`,
-      ALP: `${red[500]} !important`,
-      GRN: `${green[500]} !important`,
-      OTH: `${brown[500]} !important`,
-      UND: `${grey[500]} !important`,
-    }[party],
+export const Chip = withStyles({
+  root: {
+    "&.party-ALP": {
+      backgroundColor: red[500],
+    },
+    "&.party-LIB": {
+      backgroundColor: blue[500],
+    },
+    "&.party-GRN": {
+      backgroundColor: green[500],
+    },
+    "&.party-OTH": {
+      backgroundColor: brown[500],
+    },
+    "&.party-UND": {
+      backgroundColor: grey[500],
+    },
     color: "white !important",
-  }),
-);
+  },
+})(MaterialChip);
 
 export const GenericIcon = styled("span")({
   fontSize: "1.6em",
