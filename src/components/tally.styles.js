@@ -1,8 +1,10 @@
-import { makeStyles, styled } from "@material-ui/styles";
+import { styled } from "@material-ui/styles";
 import {
+  AppBar as MaterialAppBar,
   Chip as MaterialChip,
-  Select as MaterialSelect,
+  Tabs as MaterialTabs,
   TableRow as MaterialTableRow,
+  withStyles,
 } from "@material-ui/core";
 import {
   Star as MaterialStar,
@@ -15,8 +17,6 @@ export const Wrapper = styled("div")({
   paddingTop: 72,
   paddingBottom: 60,
 });
-
-export const Select = styled(MaterialSelect)({});
 
 export const StarFilled = styled(MaterialStar)({
   color: amber[500],
@@ -55,24 +55,22 @@ export const GenericIcon = styled("span")({
   lineHeight: 1.2,
 });
 
-export const useTabsClasses = makeStyles({
+export const Tabs = withStyles({
   flexContainer: {
     justifyContent: "space-around",
   },
   indicator: {
     backgroundColor: `${amber[500]} !important`,
   },
-});
+})(MaterialTabs);
 
-export const useTabClasses = makeStyles({});
-
-export const useTopBarClasses = makeStyles({
+export const TopBar = withStyles({
   colorPrimary: {
     backgroundColor: "black !important",
   },
-});
+})(MaterialAppBar);
 
-export const useBottomBarClasses = makeStyles({
+export const BottomBar = withStyles({
   colorSecondary: {
     backgroundColor: `${grey[200]} !important`,
     color: "black !important",
@@ -86,4 +84,4 @@ export const useBottomBarClasses = makeStyles({
     flexDirection: "row !important",
     justifyContent: "space-around !important",
   },
-});
+})(MaterialAppBar);

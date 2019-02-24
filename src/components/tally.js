@@ -1,19 +1,17 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { filter, length, pipe, prop, propEq } from "ramda";
-import { AppBar, IconButton, Tab, Tabs, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
+import { IconButton, Select, Tab, Table, TableBody, TableCell, TableHead } from "@material-ui/core";
 import { SwapHoriz, Star, ViewList } from "@material-ui/icons";
 import {
+  BottomBar,
   Chip,
   GenericIcon,
-  Select,
   StarFilled,
   StarBorder,
   TableRow,
+  Tabs,
+  TopBar,
   Wrapper,
-  useTabClasses,
-  useTabsClasses,
-  useTopBarClasses,
-  useBottomBarClasses,
 } from "./tally.styles";
 import { useDistricts } from "../hooks/use-districts";
 import {
@@ -45,10 +43,6 @@ const Tally = () => {
     }
     return districts;
   }, [districts, filterValue]);
-  const topBarClasses = useTopBarClasses();
-  const bottomBarClasses = useBottomBarClasses();
-  const tabClasses = useTabClasses();
-  const tabsClasses = useTabsClasses();
 
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(districts));
@@ -56,19 +50,18 @@ const Tally = () => {
 
   return (
     <Wrapper>
-      <AppBar position="fixed" classes={topBarClasses} color="primary">
+      <TopBar position="fixed" color="primary">
         <Tabs
-          classes={tabsClasses}
           value={filterValue}
           onChange={(event, value) => setFilterValue(value)}
           scrollButtons="off"
         >
-          <Tab classes={tabClasses} label="All" icon={<ViewList />} />
-          <Tab classes={tabClasses} label="Changing" icon={<SwapHoriz />} />
-          <Tab classes={tabClasses} label="Undecided" icon={<GenericIcon>?</GenericIcon>} />
-          <Tab classes={tabClasses} label="Featured" icon={<Star />} />
+          <Tab label="All" icon={<ViewList />} />
+          <Tab label="Changing" icon={<SwapHoriz />} />
+          <Tab label="Undecided" icon={<GenericIcon>?</GenericIcon>} />
+          <Tab label="Featured" icon={<Star />} />
         </Tabs>
-      </AppBar>
+      </TopBar>
       <Table padding="none">
         <TableHead>
           <TableRow>
@@ -107,13 +100,13 @@ const Tally = () => {
           ))}
         </TableBody>
       </Table>
-      <AppBar position="fixed" classes={bottomBarClasses} color="secondary">
+      <BottomBar position="fixed" color="secondary">
         <Chip party="LNP" label={`LNP ${lengthWhere(propEq("party", "LNP"), districts)}`} />
         <Chip party="ALP" label={`ALP ${lengthWhere(propEq("party", "ALP"), districts)}`} />
         <Chip party="GRN" label={`GRN ${lengthWhere(propEq("party", "GRN"), districts)}`} />
         <Chip party="OTH" label={`OTH ${lengthWhere(propEq("party", "OTH"), districts)}`} />
         <Chip party="UND" label={`UND ${lengthWhere(propEq("party", ""), districts)}`} />
-      </AppBar>
+      </BottomBar>
     </Wrapper>
   );
 };
