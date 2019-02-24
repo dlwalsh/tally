@@ -3,7 +3,6 @@ import { assoc, lensPath, map, not, over, pipe, reduce, set, values } from "ramd
 import { slug } from "../utils/slug";
 
 const annotateInitialState = pipe(
-  map(assoc("party", "")),
   map(d => assoc("id", slug(d.name), d)),
   reduce(
     (record, d) => assoc(d.id, d, record),
